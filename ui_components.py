@@ -390,23 +390,70 @@ class SearchModal(discord.ui.Modal):
         self.search_term_input = discord.ui.TextInput(label="Digite o termo que você quer procurar", style=discord.TextStyle.short, placeholder="Ex: 'Card de Teste'", required=True)
         self.add_item(self.search_term_input)
 
-    async def on_submit(self, interaction: Interaction):
-        await interaction.response.defer(thinking=True, ephemeral=True)
-        search_term = self.search_term_input.value
+async def on_submit(self, interaction: Interaction):
+    collected_from_modal = {name: item.value for name, item in self.text_inputs.items() if item.value}
+
+    # Se não houver mais perguntas (nenhum menu de seleção), crie o card diretamente.
+    if not self.select_props:
         try:
-            cards = self.notion.search_in_database(self.config['notion_url'], search_term, self.selected_property['name'], self.selected_property['type'])
-            results = cards.get('results', [])
-            if not results: return await interaction.followup.send(f"❌ Nenhum resultado encontrado para **'{search_term}'**.", ephemeral=True)
+            # Responde à interação para que o usuário saiba que algo está acontecendo
+            await interaction.response.send_message("⚙️ Processando e criando seu card no Notion...", ephemeral=True)
 
-            await interaction.followup.send(f"✅ **{len(results)}** resultado(s) encontrado(s)! Veja abaixo:", ephemeral=True)
+            title_prop_name = next((p['name'] for p in self.all_properties if p['type'] == 'title'), None)
+            if not title_prop_name: raise NotionAPIError("Propriedade de Título não encontrada.")
+            title_value = collected_from_modal.pop(title_prop_name, f"Card criado em {datetime.now().strftime('%d/%m')}")
 
-            view = PaginationView(interaction.user, results, self.config, self.notion, actions=['edit', 'delete', 'share'])
-            view.update_nav_buttons()
-            await interaction.followup.send(embed=await view.get_page_embed(), view=view, ephemeral=True)
-        except NotionAPIError as e: await interaction.followup.send(f"❌ **Ocorreu um erro com o Notion:**\n`{e}`", ephemeral=True)
+            # Preenchimento automático de propriedades
+            individual_prop = self.config.get('individual_person_prop')
+            if individual_prop:
+                collected_from_modal[individual_prop] = interaction.user.display_name
+
+            collective_prop = self.config.get('collective_person_prop')
+            if collective_prop and self.thread_context:
+                participants = await get_topic_participants(self.thread_context)
+                notion_user_ids = [self.notion.search_id_person(member.display_name) for member in participants]
+                collected_from_modal[collective_prop] = [uid for uid in notion_user_ids if uid]
+
+            topic_prop_name = self.config.get('topic_link_property_name')
+            if topic_prop_name and self.thread_context:
+                collected_from_modal[topic_prop_name] = self.thread_context.jump_url
+
+            page_content = await _build_notion_page_content(self.config, self.thread_context, self.notion)
+
+            # Cria a página no Notion
+            page_properties = self.notion.build_page_properties(self.config['notion_url'], title_value, collected_from_modal)
+            response = self.notion.insert_into_database(
+                self.config['notion_url'],
+                page_properties,
+                children=page_content
+            )
+
+            # Formata e envia a resposta final
+            display_names = self.config.get('display_properties', [])
+            final_embed = self.notion.format_page_for_embed(response, display_properties=display_names)
+
+            if final_embed:
+                final_embed.title = f"✅ Card '{final_embed.title.replace('📌 ', '')}' Criado!"
+                final_embed.color = Color.purple()
+                page_id = response['id']
+                publish_view = PublishView(interaction.user.id, final_embed, page_id, self.config, self.notion)
+                # Edita a mensagem "Processando..." com o resultado final
+                await interaction.edit_original_response(content="Card criado! Use o botão abaixo para exibi-lo para todos.", embed=final_embed, view=publish_view)
+            else:
+                await interaction.edit_original_response(content="✅ Card criado, mas não foi possível gerar a visualização.")
         except Exception as e:
-            await interaction.followup.send(f"🔴 **Ocorreu um erro inesperado:**\n`{e}`", ephemeral=True)
-            print(f"Erro inesperado no on_submit do SearchModal: {e}")
+            # Se der erro, edita a mensagem "Processando..." com a mensagem de erro
+            await interaction.edit_original_response(content=f"🔴 Erro ao criar o card: {e}", view=None, embed=None)
+    
+    # Se houver mais uma etapa (menus de seleção)
+    else:
+        view = CardSelectPropertiesView(interaction.user.id, self.config, self.all_properties, self.select_props, collected_from_modal, self.thread_context, self.notion)
+        # Responde à interação mostrando a próxima etapa
+        await interaction.response.send_message(
+            "📝 Etapa 1/2 concluída. Agora, selecione os valores abaixo.",
+            view=view,
+            ephemeral=True
+        )
 
 class PublishView(View):
     def __init__(self, author_id: int, embed_to_publish: discord.Embed, page_id: str, config: dict, notion: NotionIntegration):
