@@ -151,11 +151,12 @@ async def config_command_error(interaction: Interaction, error: app_commands.App
     else:
         message = f"🔴 Um erro de comando ocorreu: {error}"
         print(f"Erro no comando /config: {error}")
-
-    if interaction.response.is_done():
+        
+    try:
         await interaction.followup.send(message, ephemeral=True)
-    else:
-        await interaction.response.send_message(message, ephemeral=True)
+    except discord.errors.HTTPException as e:
+        print(f"Não foi possível enviar a mensagem de erro via followup: {e}")
+
 
 
 @bot.tree.command(name="card", description="Abre um formulário para criar um novo card no Notion.")
