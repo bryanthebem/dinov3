@@ -1,0 +1,22 @@
+# Ficheiros de Segredos e Variáveis de Ambiente
+# IGNORAR ESTE FICHEIRO É A REGRA MAIS IMPORTANTE!
+.env
+
+# Ficheiros de configuração de IDEs e editores
+.vscode/
+.idea/
+
+# Ficheiros de cache e compilados do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Pastas de ambiente virtual
+venv/
+env/
+*.venv
+
+# Ficheiros de configuração do sistema operacional
+.DS_Store
+Thumbs.db

@@ -1,0 +1,281 @@
+{
+    "1366456386883551263": {
+        "notion_url": "https://www.notion.so/67a17792acae44b899e79276f799c0aa?v=23076765dec0471981f97a0f420549f0&source=copy_link",
+        "create_properties": [
+            "Nome",
+            "Status",
+            "Propriedade1",
+            "Tipo",
+            "Autor",
+            "Envolvidos"
+        ],
+        "display_properties": [
+            "Nome",
+            "Status",
+            "Tipo",
+            "Propriedade1",
+            "Envolvidos"
+        ],
+        "channels": {
+            "1392629969040969901": {
+                "notion_url": "https://www.notion.so/22c3bffc59298038b8b5ffa3c9507cf7?v=22c3bffc59298038b540000ca1e33f27&source=copy_link",
+                "create_properties": [
+                    "Nome",
+                    "Prioridade",
+                    "Status",
+                    "Tags",
+                    "Respons\u00e1vel "
+                ],
+                "display_properties": [
+                    "Nome",
+                    "Prioridade",
+                    "Status",
+                    "Tags",
+                    "Respons\u00e1vel "
+                ]
+            },
+            "1366456387344793712": {
+                "notion_url": "https://www.notion.so/67a17792acae44b899e79276f799c0aa?v=23076765dec0471981f97a0f420549f0&source=copy_link",
+                "create_properties": [
+                    "Nome",
+                    "Status",
+                    "Tipo",
+                    "Propriedade1",
+                    "Autor",
+                    "Envolvidos"
+                ],
+                "display_properties": [
+                    "Nome",
+                    "Status",
+                    "Envolvidos"
+                ]
+            },
+            "1393229010863132714": {
+                "notion_url": "https://www.notion.so/67a17792acae44b899e79276f799c0aa?v=23076765dec0471981f97a0f420549f0&source=copy_link",
+                "create_properties": [
+                    "Nome",
+                    "Status",
+                    "Autor",
+                    "Envolvidos"
+                ],
+                "display_properties": [
+                    "Nome",
+                    "Status"
+                ]
+            },
+            "1393229028282077225": {
+                "notion_url": "https://www.notion.so/22d3bffc59298035bbdef573374c22f3?v=22d3bffc592980a5af73000c03a4e148&source=copy_link",
+                "create_properties": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                ],
+                "display_properties": [
+                    "1",
+                    "4",
+                    "5",
+                    "6"
+                ]
+            },
+            "1393276334905753770": {
+                "notion_url": "https://www.notion.so/22c3bffc59298038b8b5ffa3c9507cf7?v=22c3bffc59298038b540000ca1e33f27&source=copy_link",
+                "create_properties": [
+                    "Nome",
+                    "Prioridade",
+                    "Status",
+                    "Tags",
+                    "Respons\u00e1vel"
+                ],
+                "display_properties": [
+                    "Nome",
+                    "Prioridade",
+                    "Status",
+                    "Tags"
+                ]
+            },
+            "1393316302554136646": {
+                "notion_url": "https://www.notion.so/22c3bffc59298038b8b5ffa3c9507cf7?v=22c3bffc59298038b540000ca1e33f27&source=copy_link",
+                "create_properties": [
+                    "Nome",
+                    "Prioridade",
+                    "Status",
+                    "Tags",
+                    "Respons\u00e1vel"
+                ],
+                "display_properties": [
+                    "Nome",
+                    "Prioridade",
+                    "Status",
+                    "Tags",
+                    "Respons\u00e1vel"
+                ]
+            },
+            "1393385606779900034": {
+                "notion_url": "https://www.notion.so/22c3bffc59298038b8b5ffa3c9507cf7?v=22c3bffc59298038b540000ca1e33f27&source=copy_link",
+                "create_properties": [
+                    "Nome",
+                    "Prioridade",
+                    "Tags",
+                    "Status",
+                    "Respons\u00e1vel"
+                ],
+                "display_properties": [
+                    "Nome",
+                    "Prioridade",
+                    "Status",
+                    "Tags",
+                    "Respons\u00e1vel"
+                ]
+            },
+            "1393388912755609720": {
+                "notion_url": "https://www.notion.so/22e3bffc592980b19020dde55bad2f37?v=22e3bffc592981b6b000000c2c6937e1&source=copy_link",
+                "create_properties": [
+                    "Nome",
+                    "Prioridade",
+                    "Status",
+                    "Tags",
+                    "Respons\u00e1vel"
+                ],
+                "display_properties": [
+                    "Nome",
+                    "Prioridade",
+                    "Status",
+                    "Tags",
+                    "Respons\u00e1vel"
+                ]
+            },
+            "1393424955928215672": {
+                "notion_url": "https://www.notion.so/22e3bffc59298016ac1ad8d52245a24a?v=22e3bffc592980faa8ea000cb2a64734&source=copy_link",
+                "create_properties": [
+                    "Nome",
+                    "Situa\u00e7\u00e3o",
+                    "Prioridade",
+                    "Defini\u00e7\u00e3o",
+                    "Respons\u00e1vel",
+                    "Prazo Original"
+                ],
+                "display_properties": [
+                    "Nome",
+                    "Situa\u00e7\u00e3o",
+                    "Defini\u00e7\u00e3o",
+                    "Respons\u00e1vel",
+                    "Prioridade"
+                ]
+            },
+            "1393459519321018370": {
+                "notion_url": "https://www.notion.so/22e3bffc59298016ac1ad8d52245a24a?v=22e3bffc592980faa8ea000cb2a64734&source=copy_link",
+                "create_properties": [
+                    "Nome",
+                    "Situa\u00e7\u00e3o",
+                    "Defini\u00e7\u00e3o",
+                    "Prioridade",
+                    "Respons\u00e1vel",
+                    "Link do t\u00f3pico",
+                    "Prazo Original"
+                ],
+                "display_properties": [
+                    "Situa\u00e7\u00e3o",
+                    "Nome",
+                    "Defini\u00e7\u00e3o",
+                    "Respons\u00e1vel",
+                    "Prioridade",
+                    "Prazo Original",
+                    "Link do t\u00f3pico"
+                ]
+            },
+            "1393463193564610671": {
+                "notion_url": "https://www.notion.so/22e3bffc59298016ac1ad8d52245a24a?v=22e3bffc592980faa8ea000cb2a64734&source=copy_link",
+                "create_properties": [
+                    "Nome",
+                    "Situa\u00e7\u00e3o",
+                    "Defini\u00e7\u00e3o",
+                    "Prioridade",
+                    "Respons\u00e1vel",
+                    "Link do t\u00f3pico",
+                    "Prazo Original"
+                ],
+                "display_properties": [
+                    "Nome",
+                    "Situa\u00e7\u00e3o",
+                    "Defini\u00e7\u00e3o",
+                    "Prioridade",
+                    "Respons\u00e1vel",
+                    "Link do t\u00f3pico",
+                    "Prazo Original"
+                ],
+                "action_buttons_enabled": false
+            },
+            "1393463284447055882": {
+                "notion_url": "https://www.notion.so/22e3bffc59298016ac1ad8d52245a24a?v=22e3bffc592980faa8ea000cb2a64734&source=copy_link",
+                "create_properties": [
+                    "Respons\u00e1vel",
+                    "Link do topico",
+                    "Prazo Original",
+                    "Prioridade",
+                    "Situa\u00e7\u00e3o",
+                    "Nome"
+                ],
+                "display_properties": [
+                    "Link do topico",
+                    "Nome",
+                    "Situa\u00e7\u00e3o",
+                    "Defini\u00e7\u00e3o",
+                    "Prioridade",
+                    "Respons\u00e1vel"
+                ],
+                "action_buttons_enabled": false,
+                "topic_link_property_name": "Texto",
+                "individual_person_prop": "Respons\u00e1vel",
+                "collective_person_prop": "Pessoa"
+            },
+            "1393463246094340136": {
+                "notion_url": "https://www.notion.so/22e3bffc59298016ac1ad8d52245a24a?v=22e3bffc592980faa8ea000cb2a64734&source=copy_link",
+                "create_properties": [
+                    "Nome",
+                    "Pessoa",
+                    "Situa\u00e7\u00e3o",
+                    "Defini\u00e7\u00e3o",
+                    "Prioridade",
+                    "Respons\u00e1vel",
+                    "Prazo Original"
+                ],
+                "display_properties": [
+                    "Nome",
+                    "Pessoa",
+                    "Situa\u00e7\u00e3o",
+                    "Defini\u00e7\u00e3o",
+                    "Prioridade",
+                    "Respons\u00e1vel",
+                    "Prazo Original"
+                ],
+                "action_buttons_enabled": false,
+                "topic_link_property_name": "Link do topico",
+                "individual_person_prop": "Respons\u00e1vel",
+                "collective_person_prop": "Pessoa",
+                "ai_summary_enabled": true
+            },
+            "1394063411381276742": {
+                "notion_url": "https://www.notion.so/22e3bffc59298016ac1ad8d52245a24a?v=22e3bffc592980faa8ea000cb2a64734",
+                "create_properties": [
+                    "Nome",
+                    "Situa\u00e7\u00e3o",
+                    "Defini\u00e7\u00e3o",
+                    "Prioridade"
+                ],
+                "display_properties": [
+                    "Nome",
+                    "Pessoa",
+                    "Situa\u00e7\u00e3o",
+                    "Prioridade"
+                ],
+                "action_buttons_enabled": false,
+                "topic_link_property_name": "Link do topico",
+                "individual_person_prop": "Respons\u00e1vel",
+                "collective_person_prop": "Pessoa",
+                "ai_summary_enabled": true
+            }
+        }
+    }
+}
