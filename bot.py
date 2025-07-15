@@ -7,7 +7,7 @@ from discord.ui import Select, View # <-- CORREÇÃO: Importação do local corr
 import os
 from dotenv import load_dotenv
 from typing import Optional
-
+import asyncio 
 # Módulos locais
 from notion_integration import NotionIntegration, NotionAPIError
 from config_utils import save_config, load_config
@@ -18,6 +18,7 @@ from ui_components import (
     CardModal,
     ManagementView,
 )
+from webhook_server import run_server
 
 # Carregar variáveis de ambiente e inicializar bot/notion
 load_dotenv()
@@ -111,8 +112,12 @@ async def on_ready():
     else:
         await bot.tree.sync()
         print("Comandos sincronizados globalmente.")
-    print(f"✅ {bot.user} está online e pronto para uso!")
+        
+    # Inicia o servidor de webhook quando o bot estiver pronto
+    loop = asyncio.get_event_loop()
+    run_server(bot, loop)
 
+    print(f"✅ {bot.user} está online e pronto para uso!")
 
 # --- COMANDOS DE BARRA (/) ---
 
