@@ -4,6 +4,7 @@ from flask import Flask, request, jsonify
 from threading import Thread
 import asyncio
 import re
+import os
 from notion_integration import NotionIntegration, NotionAPIError
 from config_utils import load_config
 import discord
